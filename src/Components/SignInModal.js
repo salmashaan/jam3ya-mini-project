@@ -26,7 +26,7 @@ function SignInModal(props) {
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
-        <Modal.Header closeButton>
+        <Modal.Header>
           <Modal.Title id="contained-modal-title-vcenter">Sign In</Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -53,10 +53,10 @@ function SignInModal(props) {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="warning" onClick={handleSubmit}>
+          <Button variant="info" onClick={handleSubmit}>
             Sign In
           </Button>
-          <Button variant="warning" onClick={props.closeModal}>
+          <Button variant="info" onClick={props.closeModal}>
             Close
           </Button>
         </Modal.Footer>

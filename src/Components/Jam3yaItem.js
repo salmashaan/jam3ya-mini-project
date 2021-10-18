@@ -3,7 +3,7 @@ import React from "react";
 function Jam3yaItem(props) {
   const jam3ya = props.jam3ya;
   return (
-    <div className="card p-2 m-3 col-lg-4 col-sm-12">
+    <div className="card p-2 m-3 col-lg-4 col-sm-12 itemWrapper">
       <p>Title: {jam3ya.title}</p>
       <img className="card-image-top" src={jam3ya.image} alt={jam3ya.title} />
       <p>Amount: {jam3ya.amount}</p>

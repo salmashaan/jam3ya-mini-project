@@ -28,7 +28,7 @@ export default function AddJam3yaModal(props) {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header closeButton>
+      <Modal.Header>
         <Modal.Title id="contained-modal-title-vcenter">Add Jam3ya</Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -88,10 +88,10 @@ export default function AddJam3yaModal(props) {
         <p>only registered users can create Jam3ya</p>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="warning" onClick={handleSubmit}>
+        <Button variant="info" onClick={handleSubmit}>
           Create Jam3ya
         </Button>
-        <Button variant="warning" onClick={props.closeModal}>
+        <Button variant="info" onClick={props.closeModal}>
           Close
         </Button>
       </Modal.Footer>

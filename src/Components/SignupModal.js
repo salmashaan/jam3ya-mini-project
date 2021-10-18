@@ -26,7 +26,7 @@ export default function SignupModal(props) {
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
-        <Modal.Header closeButton>
+        <Modal.Header>
           <Modal.Title id="contained-modal-title-vcenter">Signup</Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -62,10 +62,10 @@ export default function SignupModal(props) {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="warning" onClick={handleSubmit}>
+          <Button variant="info" onClick={handleSubmit}>
             {props.signIn ? "Sign in" : "Sign up"}
           </Button>
-          <Button variant="warning" onClick={props.closeModal}>
+          <Button variant="info" onClick={props.closeModal}>
             Close
           </Button>
         </Modal.Footer>

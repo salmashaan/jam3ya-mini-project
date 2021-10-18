@@ -16,7 +16,7 @@ function Jam3yasList() {
   ));
   return (
     <div className="container">
-      <Button variant="warning" onClick={openModal}>
+      <Button variant="info" onClick={openModal}>
         Add Jam3ya
       </Button>
       <AddJam3yaModal isOpen={isOpen} closeModal={closeModal} />

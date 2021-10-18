@@ -7,6 +7,7 @@ import authStore from "../Stores/AuthStore";
 import { observer } from "mobx-react";
 import React, { useState } from "react";
 import SignInModal from "./SignInModal";
+import logo from "../Components/communities.png";
 
 function NavBar() {
   const [signupIsOpen, setSignupIsOpen] = useState(false);
@@ -14,37 +15,41 @@ function NavBar() {
 
   return (
     <Navbar
-      className="navbar"
+      className="navbar navbar-dark bg-dark navbar-default navbar-static-top"
       collapseOnSelect
       expand="lg"
-      bg="black"
-      variant="dark"
     >
       <Container>
         <Link to="/">
-          <Navbar.Brand className="title-nav" href="#home">
-            Home
-          </Navbar.Brand>
+          <a class="navbar-brand" href="#">
+            <img
+              src={logo}
+              width="50"
+              height="50"
+              class="d-inline-block align-top"
+              alt=""
+            />
+          </a>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="me-auto ">
             <Link to="/jam3ya-list">
               <Nav.Link href="#jam3yas">Jam3yas</Nav.Link>
             </Link>
-            <Nav.Link href="#other">Other</Nav.Link>
-            <NavDropdown title="other" id="collasible-nav-dropdown">
+            <Nav.Link href="#about-us"> About Us</Nav.Link>
+            <NavDropdown title="Other" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#members">Members</NavDropdown.Item>
-              <NavDropdown.Item href="#about-us">About Us</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">
+              <NavDropdown.Item href="#faqs">FAQs</NavDropdown.Item>
+              <NavDropdown.Item href="#social-media">
                 Social Media
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Other</NavDropdown.Item>
+              <NavDropdown.Item href="#other">Other</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="#sign">
+            <Nav.Link className="nav-buttons" href="#sign">
               {authStore.user ? (
                 <>
                   <li class="nav-item">Hello {authStore.user.username}</li>
@@ -53,9 +58,10 @@ function NavBar() {
                   </li>
                 </>
               ) : (
-                <>
-                  <li class="nav-item">
+                <div className="btn-toolbar gap-3">
+                  <li class="nav-item ">
                     <Button
+                      variant="outline-info "
                       onClick={() => {
                         setSignupIsOpen(true);
                         setSignInIsOpen(false);
@@ -71,6 +77,7 @@ function NavBar() {
                   </li>
                   <li>
                     <Button
+                      variant="outline-info"
                       onClick={() => {
                         setSignupIsOpen(false);
                         setSignInIsOpen(true);
@@ -84,7 +91,7 @@ function NavBar() {
                       isOpen={signInIsOpen}
                     />
                   </li>
-                </>
+                </div>
               )}
               <SignInModal />
             </Nav.Link>
