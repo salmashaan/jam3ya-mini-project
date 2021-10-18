@@ -20,7 +20,7 @@ function Jam3yasList() {
         Add Jam3ya
       </Button>
       <AddJam3yaModal isOpen={isOpen} closeModal={closeModal} />
-      <div className="row mb-30 mt-30">{jam3yas}</div>
+      <div className="listWrapper col-md-auto text-center">{jam3yas}</div>
     </div>
   );
 }
