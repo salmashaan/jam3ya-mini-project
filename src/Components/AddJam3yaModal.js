@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import jam3yaStore from "../Stores/Jam3yaStore";
+import DatePicker from "react-datepicker";
 
 export default function AddJam3yaModal(props) {
   const [jam3ya, setJam3ya] = useState({
@@ -69,22 +70,18 @@ export default function AddJam3yaModal(props) {
               placeholder="Enter member limit"
             />
           </Form.Group>
-          <Form.Group className="mb-3">
+          <Form.Group>
             <Form.Label>Start Date</Form.Label>
-            <Form.Control
-              type="text"
-              onChange={handleChange}
-              name="startDate"
-              placeholder="Enter start date"
+            <DatePicker
+              selected={jam3ya.startDate}
+              onChange={(date) => setJam3ya({ ...jam3ya, startDate: date })}
             />
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>End Date</Form.Label>
-            <Form.Control
-              type="text"
-              onChange={handleChange}
-              name="endDate"
-              placeholder="Enter end date"
+            <DatePicker
+              selected={jam3ya.endDate}
+              onChange={(date) => setJam3ya({ ...jam3ya, endDate: date })}
             />
           </Form.Group>
         </Form>

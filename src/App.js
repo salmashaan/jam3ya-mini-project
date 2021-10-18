@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router";
 import Nav from "./Components/Nav";
 import Home from "./Components/Home";
 import authStore from "./Stores/AuthStore";
+import "react-datepicker/dist/react-datepicker.css";
 
 function App() {
   return (
