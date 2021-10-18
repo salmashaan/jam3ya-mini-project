@@ -9,11 +9,11 @@ class AuthStore {
     makeAutoObservable(this);
   }
 
-  // setUser = (token) => {
-  //   localStorage.setItem("myToken", token);
-  //   api.defaults.headers.common.Authorization = `Bearer ${token}`;
-  //   this.user = decode(token);
-  // };
+  setUser = (token) => {
+    localStorage.setItem("myToken", token);
+    api.defaults.headers.common.Authorization = `Bearer ${token}`;
+    this.user = decode(token);
+  };
 
   // logging = async (userDate, path) => {
   //   try {
@@ -26,7 +26,8 @@ class AuthStore {
 
   signup = async (userData) => {
     try {
-      await api.post("/signup", userData);
+      const response = await api.post("/signup", userData);
+      this.setUser(response.data.token);
     } catch (error) {
       console.log("AuthStore -> signup -> error", error);
     }
@@ -34,8 +35,9 @@ class AuthStore {
 
   signin = async (userData) => {
     try {
-      const res = await api.post("/signin", userData);
-      console.log("authStore -> signin -> res.data", res.data);
+      const response = await api.post("/signin", userData);
+      this.setUser(response.data.token);
+      console.log("authStore -> signin -> response.data", response.data);
     } catch (error) {
       console.log("AuthStore -> signin -> error", error);
     }

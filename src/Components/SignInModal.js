@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form, Modal, Button } from "react-bootstrap";
 import authStore from "../Stores/AuthStore";
 
-export default function SignupModal(props) {
+export default function SignInModal(props) {
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -13,7 +13,7 @@ export default function SignupModal(props) {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    authStore.signup(user);
+    authStore.signin(user);
     props.closeModal();
   };
 
@@ -27,7 +27,7 @@ export default function SignupModal(props) {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">Signup</Modal.Title>
+          <Modal.Title id="contained-modal-title-vcenter">Sign In</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
@@ -38,15 +38,6 @@ export default function SignupModal(props) {
                 onChange={handleChange}
                 name="username"
                 placeholder="Enter your username"
-              />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                type="text"
-                onChange={handleChange}
-                name="email"
-                placeholder="Enter your email"
               />
             </Form.Group>
 
@@ -62,9 +53,7 @@ export default function SignupModal(props) {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="warning" onClick={handleSubmit}>
-            {props.signIn ? "Sign in" : "Sign up"}
-          </Button>
+          <Button variant="warning" onClick={handleSubmit}></Button>
           <Button variant="warning" onClick={props.closeModal}>
             Close
           </Button>
