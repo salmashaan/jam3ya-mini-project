@@ -6,10 +6,11 @@ import { Button } from "react-bootstrap";
 import authStore from "../Stores/AuthStore";
 import { observer } from "mobx-react";
 import React, { useState } from "react";
+import SignInModal from "./SignInModal";
 
 function NavBar() {
   const [signupIsOpen, setSignupIsOpen] = useState(false);
-  const [signIn, setSignIn] = useState(false);
+  const [signInIsOpen, setSignInIsOpen] = useState(false);
 
   return (
     <Navbar
@@ -57,30 +58,35 @@ function NavBar() {
                     <Button
                       onClick={() => {
                         setSignupIsOpen(true);
-                        setSignIn(false);
+                        setSignInIsOpen(false);
                       }}
                     >
                       Sign up
                     </Button>
-                  </li>
-                  <li>
-                    <Button
-                      onClick={() => {
-                        setSignupIsOpen(true);
-                        setSignIn(true);
-                      }}
-                    >
-                      Sign in
-                    </Button>
                     <SignupModal
-                      signIn={signIn}
+                      signIn={signupIsOpen}
                       closeModal={() => setSignupIsOpen(false)}
                       isOpen={signupIsOpen}
                     />
                   </li>
+                  <li>
+                    <Button
+                      onClick={() => {
+                        setSignupIsOpen(false);
+                        setSignInIsOpen(true);
+                      }}
+                    >
+                      Sign in
+                    </Button>
+                    <SignInModal
+                      signIn={signInIsOpen}
+                      closeModal={() => setSignInIsOpen(false)}
+                      isOpen={signInIsOpen}
+                    />
+                  </li>
                 </>
               )}
-              <SignupModal />
+              <SignInModal />
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

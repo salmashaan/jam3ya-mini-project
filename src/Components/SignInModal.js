@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form, Modal, Button } from "react-bootstrap";
 import authStore from "../Stores/AuthStore";
 
-export default function SignInModal(props) {
+function SignInModal(props) {
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -53,7 +53,9 @@ export default function SignInModal(props) {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="warning" onClick={handleSubmit}></Button>
+          <Button variant="warning" onClick={handleSubmit}>
+            Sign In
+          </Button>
           <Button variant="warning" onClick={props.closeModal}>
             Close
           </Button>
@@ -62,3 +64,5 @@ export default function SignInModal(props) {
     </div>
   );
 }
+
+export default SignInModal;

@@ -20,7 +20,7 @@ class Jam3yaStore {
   createJam3ya = async (jam3ya) => {
     try {
       const response = await api.post("/jam3ya", jam3ya);
-      this.courses.push(response.data);
+      this.jam3yas.push(response.data);
     } catch (error) {
       console.log("Jam3yaStore -> createJam3ya -> error", error);
     }

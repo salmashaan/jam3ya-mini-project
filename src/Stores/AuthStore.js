@@ -15,15 +15,6 @@ class AuthStore {
     this.user = decode(token);
   };
 
-  // logging = async (userDate, path) => {
-  //   try {
-  //     const response = await api.post(`/${path}`, userDate);
-  //     this.setUser(response.data.token);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   signup = async (userData) => {
     try {
       const response = await api.post("/signup", userData);

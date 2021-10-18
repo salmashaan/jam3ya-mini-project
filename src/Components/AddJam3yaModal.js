@@ -28,12 +28,12 @@ export default function AddJam3yaModal(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">Add Course</Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">Add Jam3ya</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
           <Form.Group className="mb-3">
-            <Form.Label>Course title</Form.Label>
+            <Form.Label>Jam3ya Title</Form.Label>
             <Form.Control
               type="text"
               onChange={handleChange}
@@ -88,11 +88,11 @@ export default function AddJam3yaModal(props) {
             />
           </Form.Group>
         </Form>
-        <p>only registered users can create courses</p>
+        <p>only registered users can create Jam3ya</p>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="warning" onClick={handleSubmit}>
-          Add Course
+          Create Jam3ya
         </Button>
         <Button variant="warning" onClick={props.closeModal}>
           Close
