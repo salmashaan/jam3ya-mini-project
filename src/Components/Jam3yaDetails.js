@@ -1,6 +1,7 @@
 import React from "react";
 import { Redirect, useParams } from "react-router-dom";
 import jam3yaStore from "../Stores/Jam3yaStore";
+import Moment from "react-moment";
 
 function Jam3yaDetails() {
   const slug = useParams().listSlug;
@@ -18,11 +19,16 @@ function Jam3yaDetails() {
           <img src={jam3ya.image} alt="jam3ya" />
           <br />
           <br />
-          <div className="row justify-content-center">
-            <p className="align-self-center col-5">{jam3ya.amount}</p>
-            <p className="align-self-center col-5">{jam3ya.limit}</p>
-            <p className="align-self-center col-5">{jam3ya.startDate}</p>
-            <p className="align-self-center col-5">{jam3ya.endDate}</p>
+          <div className="row justify-content-center align-self-center col-5">
+            <p>Amount: {jam3ya.amount} KD</p>
+            <p>Member Limit: {jam3ya.limit}</p>
+            <p>
+              Start Date:{" "}
+              <Moment format="DD/MM/YYYY">{jam3ya.startDate}</Moment>
+            </p>
+            <p>
+              End Date: <Moment format="DD/MM/YYYY">{jam3ya.endDate}</Moment>
+            </p>
           </div>
           <br />
         </>

@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Home() {
   return (
     <section id="home">
       <div className="hero-image">
         <div className="hero-text">
-          <h3>Welcome to Society HS!</h3>
+          <h3 className="home-title"> WELCOME TO HS SOCIETY!</h3>
           <br />
           <hr />
           <br />
