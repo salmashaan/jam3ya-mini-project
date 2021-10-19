@@ -13,4 +13,5 @@ function Jam3yaItem(props) {
     </div>
   );
 }
+
 export default Jam3yaItem;

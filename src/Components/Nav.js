@@ -52,10 +52,10 @@ function NavBar() {
             <Nav.Link className="nav-buttons" href="#sign">
               {authStore.user ? (
                 <>
-                  <li class="nav-item">Hello {authStore.user.username}</li>
-                  <li class="nav-item">
-                    <Button onClick={() => authStore.logout()}>Logout</Button>{" "}
-                  </li>
+                  <p>
+                    Hello <span>{authStore.user.username} </span>
+                    <Button onClick={() => authStore.logout()}>Logout</Button>
+                  </p>
                 </>
               ) : (
                 <div className="btn-toolbar gap-3">

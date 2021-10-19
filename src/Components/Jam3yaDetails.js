@@ -10,8 +10,6 @@ import UpdateJam3yaModal from "./UpdateJam3yaModal";
 import { useState } from "react";
 
 function Jam3yaDetails(props) {
-  const jam3yaModal = props.jam3ya;
-  console.log(props.jam3ya);
   const [isOpen, setIsOpen] = useState(false);
 
   const closeModal = () => setIsOpen(false);
@@ -29,69 +27,74 @@ function Jam3yaDetails(props) {
   // if (!jam3ya) return <Redirect to="/jam3ya-list/:listSlug" />;
 
   return (
-    <div className="detail container card p-2 m-3 col-lg-7 col-sm-12 detailWrapper">
-      {jam3ya && ( // if there is jam3ya show its data
-        <>
-          <br />
-          <h5>{jam3ya.title}</h5>
-          <br />
-          <img className="card-image-top" src={jam3ya.image} alt="jam3ya" />
-          <br />
-          <br />
-          <div className="row justify-content-center align-self-center col-5">
-            <p>Amount: {jam3ya.amount} KD</p>
-            <p>Member Limit: {jam3ya.limit}</p>
-            <p>
-              {" "}
-              Current Members: {jam3ya.users.length} / {jam3ya.limit}
-            </p>
-            <p>
-              Start Date:{" "}
-              <Moment format="DD/MM/YYYY">{jam3ya.startDate}</Moment>
-            </p>
-            <p>
-              End Date: <Moment format="DD/MM/YYYY">{jam3ya.endDate}</Moment>
-            </p>
-          </div>
-          <br />
-          <div>
-            {jam3ya.limit > jam3ya.users.length &&
-            new Date(jam3ya.startDate) > new Date() ? (
-              <Button
-                variant="outline-info "
-                onClick={() => jam3yaStore.addUser(jam3ya._id)}
-              >
-                Join Jam3ya
-              </Button>
-            ) : (
-              <p></p>
-            )}
-            {new Date(jam3ya.startDate) > new Date() ? (
-              <Button
-                variant="outline-warning "
-                onClick={() => jam3yaStore.leave(jam3ya._id)}
-              >
-                Leave Jam3ya
-              </Button>
-            ) : (
-              <p></p>
-            )}
-
+    <div className="detailBackground">
+      <div className="detail container card p-2 m-3 col-lg-7 col-sm-12 detailWrapper">
+        {jam3ya && ( // if there is jam3ya show its data
+          <>
             <br />
-            <Button variant="outline-success" onClick={openModal}>
-              Update Jam3ya
-            </Button>
-            <UpdateJam3yaModal
-              isOpen={isOpen}
-              closeModal={closeModal}
-              jam3ya={jam3ya}
-            />
-            <Button variant="outline-danger" onClick={handleDelete}>
-              Delete Jam3ya
-            </Button>
-          </div>
-        </>
-      )}
+            <h5>{jam3ya.title}</h5>
+            <br />
+            <img className="card-image-top " src={jam3ya.image} alt="jam3ya" />
+            <br />
+            <br />
+            <div className="row justify-content-center align-self-center col-5">
+              <p>Amount: {jam3ya.amount} KD</p>
+              <p>Member Limit: {jam3ya.limit}</p>
+              <p>
+                Current Members: {jam3ya.users.length} / {jam3ya.limit}
+              </p>
+
+              <p>
+                Start Date:
+                <Moment format="DD/MM/YYYY">{jam3ya.startDate}</Moment>
+              </p>
+              <p>
+                End Date: <Moment format="DD/MM/YYYY">{jam3ya.endDate}</Moment>
+              </p>
+            </div>
+            <br />
+            <p className="buttons">
+              {jam3ya.limit > jam3ya.users.length &&
+              new Date(jam3ya.startDate) > new Date() ? (
+                <Button
+                  variant="primary "
+                  onClick={() => jam3yaStore.addUser(jam3ya._id)}
+                >
+                  Join Jam3ya
+                </Button>
+              ) : (
+                <p></p>
+              )}
+
+              {new Date(jam3ya.startDate) > new Date() ? (
+                <Button
+                  variant="primary "
+                  onClick={() => jam3yaStore.leave(jam3ya._id)}
+                >
+                  Leave Jam3ya
+                </Button>
+              ) : (
+                <p></p>
+              )}
+
+              <Button variant="primary" onClick={openModal}>
+                Update Jam3ya
+              </Button>
+
+              <UpdateJam3yaModal
+                isOpen={isOpen}
+                closeModal={closeModal}
+                jam3ya={jam3ya}
+              />
+            </p>
+            <p className="buttons">
+              <Button variant="outline-danger" onClick={handleDelete}>
+                Delete Jam3ya
+              </Button>
+            </p>
+          </>
+        )}
+      </div>
     </div>
   );
 }

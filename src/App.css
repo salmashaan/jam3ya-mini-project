@@ -18,7 +18,7 @@
 }
 
 .itemWrapper:hover {
-  background-color: #414141;
+  background-color: #21243f;
   color: rgba(255, 255, 255, 1);
   box-shadow: 0 5px 15px rgba(210, 199, 218, 0.4);
 }
@@ -73,22 +73,33 @@ nav {
 }
 
 .detailWrapper {
-  background-image: url("/src/Components/navybg-02.png");
   margin: 40px;
   background-color: rgba(14, 14, 14, 0.8);
   padding: 15px;
   border-radius: 10%;
-  /* overflow: visible;
-  flex-flow: row wrap; */
+  overflow: visible;
+  flex-flow: row wrap;
   text-align: center;
-  position: absolute;
+  position: flex;
   top: 50%;
-
-  justify-content: center;
+  left: 20%;
 
   color: rgb(0, 0, 1);
   box-shadow: 1px -1px 39px -1px rgba(34, 34, 34, 0.82);
   -webkit-box-shadow: 1px -1px 39px -1px rgba(34, 34, 34, 0.82);
   -moz-box-shadow: 1px -1px 39px -1px rgba(34, 34, 34, 0.82);
   font-family: futura;
+}
+.detailBackground {
+  background-image: url("/src/Components/navybg-02.png");
+}
+
+.search {
+  justify-content: flex-end;
+  display: flex;
+}
+.buttons {
+  justify-content: space-around;
+
+  display: inline-flex;
 }

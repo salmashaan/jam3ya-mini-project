@@ -18,12 +18,18 @@ function Jam3yasList() {
       jam3ya.title.toLowerCase().includes(query.toLowerCase())
     )
     .map((jam3ya) => <Jam3yaItem jam3ya={jam3ya} />);
+
   return (
     <div className="container">
-      <Button variant="info" onClick={openModal}>
-        Add Jam3ya
-      </Button>
-      <SearchBar setQuery={setQuery} />
+      <br />
+
+      <p>
+        <Button variant="primary" onClick={openModal}>
+          Add Jam3ya
+        </Button>
+        <SearchBar setQuery={setQuery} />{" "}
+      </p>
+
       <AddJam3yaModal isOpen={isOpen} closeModal={closeModal} />
       <div className="col-md-auto text-center">{jam3yas}</div>
     </div>
