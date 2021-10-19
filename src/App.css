@@ -24,7 +24,7 @@
 .listWrapper {
   display: flex;
   justify-content: space-evenly;
-  flex-flow: row;
+  flex-flow: row wrap;
   align-items: center;
   text-align: center;
   margin: auto;
@@ -43,4 +43,23 @@ nav {
 
 .home-text {
   text-align: center;
+}
+
+.hero-image {
+  background-image: url("/src/Components/societybg-01.png");
+  background-color: #cccccc;
+  height: 850px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
 }
