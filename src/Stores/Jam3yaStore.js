@@ -1,3 +1,4 @@
+import axios from "axios";
 import { makeAutoObservable } from "mobx";
 import api from "./api";
 
@@ -25,7 +26,28 @@ class Jam3yaStore {
       console.log("Jam3yaStore -> createJam3ya -> error", error);
     }
   };
+
+  addUser = async (jam3yaId) => {
+    try {
+      const response = await api.post(`/jam3ya/join/${jam3yaId}`);
+
+      const jam3ya = this.jam3yas.find((jam3ya) => jam3ya._id === jam3yaId);
+
+      jam3ya.users.push(response.data);
+    } catch {}
+  };
+
+  deleteJam3ya = async (id) => {
+    try {
+      console.log(id);
+      await api.delete(`/jam3ya/${id}`);
+      this.jam3yas = this.jam3yas.filter((jam3ya) => jam3ya._id !== id);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 }
+
 const jam3yaStore = new Jam3yaStore();
 jam3yaStore.fetchJam3yas();
 export default jam3yaStore;
