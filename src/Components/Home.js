@@ -12,7 +12,6 @@ export default function Home() {
           <hr />
           <br />
           <h6>
-            {" "}
             A place to join and gather with like-minded indivuals to help make
             the world a better place.
           </h6>

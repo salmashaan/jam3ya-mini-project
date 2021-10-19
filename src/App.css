@@ -71,3 +71,24 @@ nav {
   transform: translate(-50%, -50%);
   color: white;
 }
+
+.detailWrapper {
+  background-image: url("/src/Components/navybg-02.png");
+  margin: 40px;
+  background-color: rgba(14, 14, 14, 0.8);
+  padding: 15px;
+  border-radius: 10%;
+  /* overflow: visible;
+  flex-flow: row wrap; */
+  text-align: center;
+  position: absolute;
+  top: 50%;
+
+  justify-content: center;
+
+  color: rgb(0, 0, 1);
+  box-shadow: 1px -1px 39px -1px rgba(34, 34, 34, 0.82);
+  -webkit-box-shadow: 1px -1px 39px -1px rgba(34, 34, 34, 0.82);
+  -moz-box-shadow: 1px -1px 39px -1px rgba(34, 34, 34, 0.82);
+  font-family: futura;
+}

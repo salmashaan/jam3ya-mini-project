@@ -12,12 +12,13 @@ function App() {
     <div>
       <Nav />
       <Switch>
-        <Route exact path="/jam3ya-list/:listSlug">
-          <Jam3yaDetails />
-        </Route>
         <Route exact path="/jam3ya-list">
           <Jam3yaList />
         </Route>
+        <Route exact path="/:jam3yaSlug">
+          <Jam3yaDetails />
+        </Route>
+
         <Route exact path="/">
           <Home />
         </Route>

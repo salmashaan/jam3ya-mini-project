@@ -1,4 +1,3 @@
-import axios from "axios";
 import { makeAutoObservable } from "mobx";
 import api from "./api";
 
@@ -40,6 +39,18 @@ class Jam3yaStore {
   leave = async (jam3yaId) => {
     try {
       const response = await api.post(`/jam3ya/leave/${jam3yaId}`);
+
+      this.jam3yas = this.jam3yas.map((jam3ya) =>
+        jam3ya._id === jam3yaId ? response.data : jam3ya
+      );
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
+
+  updateJam3ya = async (jam3yaId, updatedJam3ya) => {
+    try {
+      const response = await api.put(`/jam3ya/${jam3yaId}`, updatedJam3ya);
 
       this.jam3yas = this.jam3yas.map((jam3ya) =>
         jam3ya._id === jam3yaId ? response.data : jam3ya

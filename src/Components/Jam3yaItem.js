@@ -5,12 +5,12 @@ import Moment from "react-moment";
 function Jam3yaItem(props) {
   const jam3ya = props.jam3ya;
   return (
-    <Link to={`/jam3ya-list/${jam3ya.slug}`}>
-      <div className="card p-2 m-3 col-lg-7 col-sm-12 itemWrapper">
+    <div className="card p-2 m-3 col-lg-7 col-sm-12 itemWrapper">
+      <Link to={`/${jam3ya.slug}`}>
         <p>{jam3ya.title}</p>
         <img className="card-image-top" src={jam3ya.image} alt={jam3ya.title} />
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 }
 export default Jam3yaItem;
