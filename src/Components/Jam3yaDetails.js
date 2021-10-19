@@ -48,14 +48,18 @@ function Jam3yaDetails() {
               variant="outline-info "
               onClick={() => jam3yaStore.addUser(jam3ya._id)}
             >
-              {" "}
-              Join Jam3ya{" "}
+              Join Jam3ya
+            </Button>
+            <Button
+              variant="outline-warning "
+              onClick={() => jam3yaStore.leave(jam3ya._id)}
+            >
+              Leave Jam3ya
             </Button>
             <br />
             <Button variant="outline-success"> Update Jam3ya </Button>
             <Button variant="outline-danger" onClick={handleDelete}>
-              {" "}
-              Delete Jam3ya{" "}
+              Delete Jam3ya
             </Button>
           </div>
         </>

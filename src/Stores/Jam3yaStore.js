@@ -31,10 +31,22 @@ class Jam3yaStore {
     try {
       const response = await api.post(`/jam3ya/join/${jam3yaId}`);
 
-      const jam3ya = this.jam3yas.find((jam3ya) => jam3ya._id === jam3yaId);
+      this.jam3yas = this.jam3yas.map((jam3ya) =>
+        jam3ya._id === jam3yaId ? response.data : jam3ya
+      );
+    } catch (error) {}
+  };
 
-      jam3ya.users.push(response.data);
-    } catch {}
+  leave = async (jam3yaId) => {
+    try {
+      const response = await api.post(`/jam3ya/leave/${jam3yaId}`);
+
+      this.jam3yas = this.jam3yas.map((jam3ya) =>
+        jam3ya._id === jam3yaId ? response.data : jam3ya
+      );
+    } catch (error) {
+      console.log("error", error);
+    }
   };
 
   deleteJam3ya = async (id) => {
@@ -43,7 +55,7 @@ class Jam3yaStore {
       await api.delete(`/jam3ya/${id}`);
       this.jam3yas = this.jam3yas.filter((jam3ya) => jam3ya._id !== id);
     } catch (error) {
-      console.log(error);
+      console.log("error", error);
     }
   };
 }
