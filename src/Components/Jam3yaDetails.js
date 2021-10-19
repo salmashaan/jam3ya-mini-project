@@ -2,6 +2,8 @@ import React from "react";
 import { Redirect, useParams } from "react-router-dom";
 import jam3yaStore from "../Stores/Jam3yaStore";
 import Moment from "react-moment";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button } from "react-bootstrap";
 
 function Jam3yaDetails() {
   const slug = useParams().listSlug;
@@ -10,7 +12,7 @@ function Jam3yaDetails() {
 
   if (!jam3ya) return <Redirect to="/" />;
   return (
-    <div className="detail">
+    <div className="detail container">
       {jam3ya && ( // if there is jam3ya show its data
         <>
           <br />
@@ -31,6 +33,12 @@ function Jam3yaDetails() {
             </p>
           </div>
           <br />
+          <div>
+            <Button variant="outline-info "> Join Jam3ya </Button>
+            <br />
+            <Button variant="outline-success"> Update Jam3ya </Button>
+            <Button variant="outline-danger"> Delete Jam3ya </Button>
+          </div>
         </>
       )}
     </div>
