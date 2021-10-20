@@ -22,13 +22,11 @@
   transform: scale(1.07);
 }
 
-a:link,
-a:visited {
+a:link {
   color: #21243f;
   text-decoration: none;
 }
 
-a:hover,
 a:active {
   color: #ffffff;
   text-decoration: none;
@@ -129,7 +127,7 @@ nav {
 }
 
 .detail {
-  position: inherit !important;
+  position: relative !important;
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -141,11 +139,11 @@ nav {
 }
 
 .fade-in-text {
-  animation: fadeIn linear 3s;
-  -webkit-animation: fadeIn linear 3s;
-  -moz-animation: fadeIn linear 3s;
-  -o-animation: fadeIn linear 3s;
-  -ms-animation: fadeIn linear 3s;
+  animation: fadeIn linear 1s;
+  -webkit-animation: fadeIn linear 1s;
+  -moz-animation: fadeIn linear 1s;
+  -o-animation: fadeIn linear 1s;
+  -ms-animation: fadeIn linear 1s;
 }
 
 @keyframes fadeIn {
@@ -176,15 +174,6 @@ nav {
 }
 
 @-o-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@-ms-keyframes fadeIn {
   0% {
     opacity: 0;
   }

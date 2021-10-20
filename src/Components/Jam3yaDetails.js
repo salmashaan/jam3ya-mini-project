@@ -78,7 +78,7 @@ function Jam3yaDetails(props) {
               <br />
               <br />
 
-              {authStore.user._id === jam3ya.author._id && (
+              {authStore.user?._id === jam3ya.author._id && (
                 <>
                   {" "}
                   <Button
@@ -95,11 +95,13 @@ function Jam3yaDetails(props) {
                   />
                   <br />
                   <br />
-                  <div className="buttons">
-                    <Button variant="outline-danger" onClick={handleDelete}>
-                      Delete Jam3ya
-                    </Button>
-                  </div>{" "}
+                  <Button
+                    className="buttons"
+                    variant="outline-danger"
+                    onClick={handleDelete}
+                  >
+                    Delete Jam3ya
+                  </Button>
                 </>
               )}
             </p>

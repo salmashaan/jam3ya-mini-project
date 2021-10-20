@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <section id="home">
       <div className="hero-image">
-        <div className="hero-text fade-in-text">
+        <div className="hero-text fade-in-text text-size">
           <h3 className="home-title"> WELCOME TO HS SOCIETY!</h3>
           <br />
           <hr />
