@@ -23,8 +23,8 @@ function Jam3yasList() {
     <div className="container">
       <br />
 
-      <p>
-        <Button variant="primary" onClick={openModal}>
+      <p className="search">
+        <Button className="add-button" variant="info" onClick={openModal}>
           Add Jam3ya
         </Button>
         <SearchBar setQuery={setQuery} />{" "}

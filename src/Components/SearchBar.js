@@ -10,8 +10,9 @@ const SearchBar = (props) => {
   return (
     <div className="search">
       <input
+        className="searchbar"
         onChange={(event) => checkLength(event.target.value)}
-        placeholder="Search for a Jam3ya Title"
+        placeholder="Search "
       />
     </div>
   );

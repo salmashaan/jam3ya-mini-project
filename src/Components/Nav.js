@@ -52,9 +52,14 @@ function NavBar() {
             <Nav.Link className="nav-buttons" href="#sign">
               {authStore.user ? (
                 <>
-                  <p>
+                  <p className="hello-user">
                     Hello <span>{authStore.user.username} </span>
-                    <Button onClick={() => authStore.logout()}>Logout</Button>
+                    <Button
+                      variant="outline-info"
+                      onClick={() => authStore.logout()}
+                    >
+                      Logout
+                    </Button>
                   </p>
                 </>
               ) : (
