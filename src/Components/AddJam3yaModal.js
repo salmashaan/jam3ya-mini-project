@@ -40,7 +40,7 @@ export default function AddJam3yaModal(props) {
               type="text"
               onChange={handleChange}
               name="title"
-              placeholder="Enter course title"
+              placeholder="Enter Jam3ya title"
             />
           </Form.Group>
 
