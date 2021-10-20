@@ -29,7 +29,7 @@ function Jam3yaDetails(props) {
   return (
     <div className="detailBackground">
       <br />
-      <div className="detail card p-2 m-2 col-lg-6 col-sm-12 small-detail detailWrapper">
+      <div className="detail card p-2 m-2 col-lg-6 col-sm-12 detailWrapper">
         {jam3ya && ( // if there is jam3ya show its data
           <>
             <br />

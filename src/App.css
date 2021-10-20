@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+div {
+  display: inline-table;
+}
+
 .itemWrapper {
   padding: 15px;
   overflow: visible;
@@ -120,7 +124,7 @@ nav {
 }
 
 .detail {
-  position: relative !important;
+  position: inherit !important;
   display: flex;
   flex-direction: column;
   min-width: 0;

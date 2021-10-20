@@ -20,7 +20,7 @@ function Jam3yasList() {
     .map((jam3ya) => <Jam3yaItem jam3ya={jam3ya} />);
 
   return (
-    <div className="container">
+    <div>
       <br />
 
       <p className="search">
