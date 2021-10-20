@@ -114,6 +114,7 @@ nav {
   justify-content: flex-end;
   display: flex;
   margin-left: 10px;
+  margin-right: 10px;
 }
 
 .add-button {
