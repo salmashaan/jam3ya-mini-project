@@ -25,7 +25,7 @@ function Jam3yaDetails(props) {
     jam3yaStore.deleteJam3ya(jam3ya._id);
   };
 
-  // if (!jam3ya) return <Redirect to="/jam3ya-list" />;
+  if (!jam3ya) return <Redirect to="/jam3ya-list" />;
 
   return (
     <div className="detailBackground">
