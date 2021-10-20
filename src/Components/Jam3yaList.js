@@ -22,7 +22,6 @@ function Jam3yasList() {
   return (
     <div>
       <br />
-
       <p className="search">
         <Button className="add-button" variant="info" onClick={openModal}>
           Add Jam3ya
@@ -31,7 +30,7 @@ function Jam3yasList() {
       </p>
 
       <AddJam3yaModal isOpen={isOpen} closeModal={closeModal} />
-      <div className="col-md-auto text-center">{jam3yas}</div>
+      <div className="col-md-auto text-center list">{jam3yas}</div>
     </div>
   );
 }
