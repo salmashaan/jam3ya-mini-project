@@ -8,6 +8,7 @@ import { observer } from "mobx-react";
 import { now } from "moment";
 import UpdateJam3yaModal from "./UpdateJam3yaModal";
 import { useState } from "react";
+import authStore from "../Stores/AuthStore";
 
 function Jam3yaDetails(props) {
   const [isOpen, setIsOpen] = useState(false);
@@ -76,26 +77,31 @@ function Jam3yaDetails(props) {
               ) : null}
               <br />
               <br />
-              <p>
-                <Button
-                  className="buttons"
-                  variant="outline-info"
-                  onClick={openModal}
-                >
-                  Update Jam3ya
-                </Button>
-              </p>
-              <UpdateJam3yaModal
-                isOpen={isOpen}
-                closeModal={closeModal}
-                jam3ya={jam3ya}
-              />
 
-              <p className="buttons">
-                <Button variant="outline-danger" onClick={handleDelete}>
-                  Delete Jam3ya
-                </Button>
-              </p>
+              {authStore.user._id === jam3ya.author._id && (
+                <>
+                  {" "}
+                  <Button
+                    className="buttons"
+                    variant="outline-info"
+                    onClick={openModal}
+                  >
+                    Update Jam3ya
+                  </Button>
+                  <UpdateJam3yaModal
+                    isOpen={isOpen}
+                    closeModal={closeModal}
+                    jam3ya={jam3ya}
+                  />
+                  <br />
+                  <br />
+                  <div className="buttons">
+                    <Button variant="outline-danger" onClick={handleDelete}>
+                      Delete Jam3ya
+                    </Button>
+                  </div>{" "}
+                </>
+              )}
             </p>
           </>
         )}
@@ -107,5 +113,3 @@ function Jam3yaDetails(props) {
 }
 
 export default observer(Jam3yaDetails);
-
-// {jam3ya.users._id === jam3ya.author._id ? () : ()}

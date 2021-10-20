@@ -5,8 +5,9 @@
 .itemWrapper {
   padding: 15px;
   overflow: visible;
-  flex-flow: row wrap;
-
+  transition: 0.3s;
+  animation: ease-in-out;
+  border-radius: 5px !important;
   color: #21243f;
   box-shadow: 1px -1px 39px -1px rgba(34, 34, 34, 0.82);
   -webkit-box-shadow: 1px -1px 39px -1px rgba(34, 34, 34, 0.82);
@@ -16,15 +17,20 @@
 
 .itemWrapper:hover {
   background-color: #21243f;
-  color: rgba(255, 255, 255, 1);
+  color: #ffffff;
   box-shadow: 0 5px 15px rgba(210, 199, 218, 0.4);
+  transform: scale(1.07);
 }
 
 a:link,
-a:visited,
+a:visited {
+  color: #21243f;
+  text-decoration: none;
+}
+
 a:hover,
 a:active {
-  color: #21243f;
+  color: #ffffff;
   text-decoration: none;
 }
 
